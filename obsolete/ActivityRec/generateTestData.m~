@@ -1,0 +1,20 @@
+clc
+
+d1 = load('~/Projects/ActivityRec/datasets/20170708_6.mat');
+
+d1_data = [d1.dataset.data.omega d1.dataset.data.accel d1.dataset.data.omega_norm d1.dataset.data.accel_norm d1.dataset.data.accel_global d1.dataset.data.omega_global d1.dataset.data.omega_global_norm d1.dataset.data.accel_global_norm d1.dataset.data.vio_quaternion d1.dataset.data.vio_rpy d1.dataset.data.velocity d1.dataset.data.position];
+test_data = d1_data;
+
+%yfit = trainedModel.predictFcn(test_data);
+figure;
+plot(d1.dataset.data.accel_global(:,3));
+figure;
+spectrogram(d1.dataset.data.accel_global(:,3),100,10,[],`0,'yaxis')
+
+% figure; 
+% plot(yfit, '-r');
+% hold on;
+% plot(d1.dataset.tags, '--b');
+% plot(d1.dataset.data.accel);
+
+clear d1_data
