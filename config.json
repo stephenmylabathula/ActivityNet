@@ -1,0 +1,22 @@
+{
+  "data_provider": {
+    "window_size": 200,
+    "window_height": 1,
+    "step_size": 10,
+    "channels": ["Accel Z", "Velocity Z", "Position Z"],
+    "labels": ["Jump", "Move", "Sit", "Stand", "Walk"],
+    "shuffle": false,
+    "normalize": "STANDARD"
+  },
+  "model": {
+    "type": "CNN",
+    "depth": 60,
+    "kernel": 60,
+    "hidden": 1000,
+    "learning_rate": 0.001
+  },
+  "training": {
+    "batch_size": 100,
+    "epochs": 8
+  }
+}
