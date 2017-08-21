@@ -12,6 +12,7 @@ def LoadDataProvisionParameters():
     data_provider_params.window_size = data['data_provider']['window_size']
     data_provider_params.window_height = data['data_provider']['window_height']
     data_provider_params.step_size = data['data_provider']['step_size']
+    data_provider_params.signals = data['data_provider']['signals']
     data_provider_params.channels = data['data_provider']['channels']
     data_provider_params.num_channels = len(data_provider_params.channels)
     data_provider_params.labels = data['data_provider']['labels']

@@ -1,0 +1,3 @@
+import data_provider
+
+data_provider.GenerateDataActionWindows()

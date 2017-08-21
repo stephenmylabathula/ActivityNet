@@ -3,7 +3,8 @@
     "window_size": 200,
     "window_height": 1,
     "step_size": 10,
-    "channels": ["Accel Z", "Velocity Z", "Position Z"],
+    "signals": ["accel_global", "velocity", "position"],
+    "channels": [[2], [2], [2]],
     "labels": ["Jump", "Move", "Sit", "Stand", "Walk"],
     "shuffle": false,
     "normalize": "STANDARD"
