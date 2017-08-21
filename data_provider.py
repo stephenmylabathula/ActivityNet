@@ -1,6 +1,8 @@
 import scipy.io
 import numpy as np
+import scipy.signal
 import config
+import matplotlib.pyplot as plt
 
 
 def GenerateDataActionWindows():
@@ -22,7 +24,9 @@ def LoadDataset(file_name, parameters):
     sit_acton_windows = GenerateSitActions(data_file, sit_tags, parameters)
     stand_action_windows = GenerateStandActions(data_file, stand_tags, parameters)
     walk_action_windows = GenerateWalkActions(data_file, walk_tags, parameters)
-    print "Successfully Loaded..."
+    for stand in stand_action_windows:
+        plt.plot(stand[0])
+        plt.show()
 
 
 # Create Jump Sequence Array
