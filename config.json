@@ -3,18 +3,22 @@
     "window_size": 400,
     "window_height": 1,
     "step_size": 200,
-    "signals": ["accel_global", "velocity", "position"],
-    "channels": [[2], [2], [2]],
+    "signals": ["accel_global", "velocity", "position", "up_jump_status", "down_jump_status", "jump_velocity_status",
+                "jump_smoothed_acceleration_zero_crossing", "walk_position_z", "walk_velocity_xy", "sit_accel_status",
+                "sit_velocity_z", "sit_velocity_xy", "stand_accel_status", "stand_velocity_z", "stand_velocity_xy"],
+    "channels": [[2], [2], [2], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0]],
     "labels": ["Jump", "Move", "Sit", "Stand", "Walk"],
+    "window_tag_method": "LAST",
     "shuffle": false,
     "normalize": "STANDARD"
   },
   "model": {
     "type": "CNN",
-    "depth": 60,
+    "channel_multiplier": 60,
     "kernel": 60,
+    "stride": 1,
     "hidden": 1000,
-    "learning_rate": 0.001
+    "learning_rate": 0.0001
   },
   "training": {
     "batch_size": 100,
