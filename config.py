@@ -26,13 +26,18 @@ def LoadDataProvisionParameters():
 def LoadModelParameters():
     with open('config.json') as datafile:
         data = json.load(datafile)
-    model_params = namedtuple("ModelParameters", ["type", "channel_multiplier", "kernel", "stride", "hidden",
-                                                  "learning_rate"], verbose=False, rename=False)
+    model_params = namedtuple("ModelParameters", ["type", "convolution_kernel", "convolution_stride",
+                                                  "convolution_channel_multiplier", "pooling_kernel", "pooling_stride",
+                                                  "hidden", "model_layout", "learning_rate"],
+                              verbose=False, rename=False)
     model_params.type = data['model']['type']
-    model_params.channel_multiplier = data['model']['channel_multiplier']
-    model_params.kernel = data['model']['kernel']
-    model_params.stride = data['model']['stride']
+    model_params.convolution_kernel = data['model']['convolution_kernel']
+    model_params.convolution_stride = data['model']['convolution_stride']
+    model_params.convolution_channel_multiplier = data['model']['convolution_channel_multiplier']
+    model_params.pooling_kernel = data['model']['pooling_kernel']
+    model_params.pooling_stride = data['model']['pooling_stride']
     model_params.hidden = data['model']['hidden']
+    model_params.model_layout = data['model']['model_layout']
     model_params.learning_rate = data['model']['learning_rate']
     return model_params
 

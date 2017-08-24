@@ -14,10 +14,13 @@
   },
   "model": {
     "type": "CNN",
-    "channel_multiplier": 60,
-    "kernel": 60,
-    "stride": 1,
-    "hidden": 1000,
+    "convolution_kernel": [60, 6],
+    "convolution_stride": [1, 1],
+    "convolution_channel_multiplier": [60, 6],
+    "pooling_kernel": [20],
+    "pooling_stride": [2],
+    "hidden": [1000],
+    "model_layout": ["C", "P", "C", "H", "S"],
     "learning_rate": 0.0001
   },
   "training": {
